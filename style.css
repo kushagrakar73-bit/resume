@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
+/* ===== Colour palette, typography and spacing ===== */
+:root { --navy: #173B63; --blue-soft: #DCEEFF; --blue-line: #AFCBE5; --blue-muted: #C7DCEF; --butter: #F2D36F; --butter-hover: #FFE7A0; --paper: #FFFDF7; --ink: #20364D; --ink-soft: #49647D; --font-head: "DM Serif Display", Georgia, serif; --font-body: "Nunito Sans", Arial, sans-serif; --space-s: 8px; --space-m: 24px; --space-l: 64px; --edge: 24px; --measure: 70ch; }
+/* ===== Base page styling ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { margin: 0; background: var(--navy); color: #F7FAFE; font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+p { max-width: var(--measure); margin: 0 0 var(--space-s); }
+ul { margin: 0; padding: 0; list-style: none; }
+/* ===== Headings, links and supporting text ===== */
+h1, h2, h3, h4 { margin: 0 0 var(--space-s); font-family: var(--font-head); font-weight: 400; line-height: 1.15; }
+h1 { max-width: 12ch; margin-bottom: var(--space-m); font-size: clamp(3rem, 8vw, 5.25rem); letter-spacing: -0.025em; }
+h2 { margin-bottom: var(--space-m); font-size: clamp(2rem, 4vw, 2.7rem); }
+h3 { font-size: 1.35rem; }
+a { color: var(--butter); text-underline-offset: 4px; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+a:hover { color: var(--butter-hover); }
+a:focus-visible { outline: 3px solid var(--butter); outline-offset: 4px; border-radius: 3px; }
+.meta { color: var(--blue-muted); font-size: .94rem; }
+/* ===== Sticky navigation with flexbox ===== */
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--navy); border-bottom: 1px solid rgba(220, 238, 255, .22); }
+.nav { display: flex; align-items: center; gap: var(--space-m); max-width: 1160px; min-height: 76px; margin: 0 auto; padding: 10px var(--edge); }
+.nav-name { color: #F7FAFE; font-family: var(--font-head); font-size: 1.35rem; text-decoration: none; white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: clamp(12px, 2vw, 26px); margin-left: auto; }
+.nav-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--blue-muted); font-size: .94rem; font-weight: 700; text-decoration: none; }
+.nav-link:hover { color: var(--butter); }
+/* ===== Primary and secondary action buttons ===== */
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 21px; border: 1px solid var(--butter); border-radius: 7px; font-size: .96rem; font-weight: 800; text-align: center; text-decoration: none; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+.button-primary { background: var(--butter); border-color: var(--butter); color: var(--navy); }
+.button-primary:hover { background: var(--butter-hover); border-color: var(--butter-hover); color: var(--navy); }
+.button-secondary { background: transparent; border-color: rgba(220, 238, 255, .6); color: #F7FAFE; }
+.button-secondary:hover { background: rgba(220, 238, 255, .1); border-color: var(--butter); color: var(--butter); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-s); margin-top: var(--space-m); }
+/* ===== Main content sections and hero area ===== */
+.section { max-width: 1160px; margin: 0 auto; padding: var(--space-l) var(--edge) 0; }
+#hero { padding-top: clamp(76px, 11vw, 132px); padding-bottom: 28px; }
+#hero .lead { max-width: 38ch; color: var(--blue-soft); font-size: clamp(1.3rem, 2.5vw, 1.65rem); line-height: 1.45; }
+#hero .meta { margin-top: 14px; }
+.note { margin-top: var(--space-m); color: var(--blue-muted); font-size: .96rem; }
+/* ===== Feature and experience cards using CSS grid ===== */
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-m); }
+.cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card { padding: 26px; background: var(--blue-soft); border: 1px solid var(--blue-line); border-radius: 12px; color: var(--ink); }
+.card h3 { margin-bottom: 12px; color: var(--navy); }
+.card p { margin-bottom: 0; color: var(--ink-soft); line-height: 1.6; }
+.card a { color: #70404A; font-weight: 700; }
+/* ===== Education list and emphasis ===== */
+.edu-list li { margin-bottom: 18px; color: var(--blue-soft); }
+.edu-list strong { display: block; margin-bottom: 2px; color: #FFFFFF; font-family: var(--font-head); font-size: 1.2rem; font-weight: 400; }
+/* ===== Resume download link and printable paper sheet ===== */
+.download { margin-bottom: var(--space-m); font-weight: 800; }
+.sheet { max-width: 794px; padding: 54px 60px; background: var(--paper); border: 1px solid #E5E0D3; color: var(--ink); font-size: .96rem; line-height: 1.52; }
+.sheet a { color: var(--navy); }
+.sheet-name { margin-bottom: 6px; color: var(--navy); font-size: 2.15rem; }
+.sheet h4 { margin-top: 25px; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #C7D8E9; color: var(--navy); font-family: var(--font-body); font-size: .82rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.entry { margin-bottom: 12px; }
+.entry-head { display: flex; justify-content: space-between; gap: var(--space-m); max-width: none; margin-bottom: 3px; color: var(--ink); font-weight: 800; }
+.entry-head span { color: #526783; font-weight: 600; white-space: nowrap; }
+.skills li { margin-bottom: 5px; }
+/* ===== Contact area and footer ===== */
+#contact { padding-bottom: var(--space-l); }
+.email-line { margin-top: var(--space-m); }
+.site-footer { border-top: 1px solid rgba(220, 238, 255, .22); }
+.site-footer p { max-width: 1160px; margin: 0 auto; padding: var(--space-m) var(--edge); color: var(--blue-muted); font-size: .94rem; }
+/* ===== Responsive layout for phones and narrow screens ===== */
+@media (max-width: 699px) { :root { --edge: 18px; --space-l: 44px; }
+html { scroll-padding-top: 132px; }
+.nav { flex-wrap: wrap; gap: 2px 14px; padding-top: 10px; padding-bottom: 10px; }
+.nav .button { min-height: 44px; margin-left: auto; padding: 0 13px; font-size: .86rem; }
+.nav-links { order: 3; width: 100%; justify-content: space-between; gap: 8px; margin-left: 0; }
+.nav-link { font-size: .84rem; }
+#hero { padding-top: 58px; }
+.lead { font-size: 1.25rem; }
+.cards, .cards.two { grid-template-columns: 1fr; }
+.card { padding: 22px; }
+.actions .button { width: 100%; }
+.sheet { padding: 28px 22px; }
+.entry-head { flex-direction: column; gap: 0; }
+ }
+/* ===== Respect reduced-motion accessibility preferences ===== */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }
+*, *::before, *::after { transition: none !important; }
+ }
+/* ===== Print only the resume on one A4 page ===== */
+@media print { @page { size: A4; margin: 14mm; }
+body { background: #FFFFFF; color: #000000; }
+.site-header, .site-footer, main > section:not(#resume), #resume > h2, .download { display: none !important; }
+#resume { max-width: none; padding: 0; }
+.sheet { max-width: none; padding: 0; border: 0; font-size: 10pt; }
+.sheet * { color: #000000 !important; }
+.sheet a { text-decoration: none; }
+ }
